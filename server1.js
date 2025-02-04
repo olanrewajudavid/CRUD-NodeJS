@@ -37,27 +37,6 @@ app.get("/", async (req,res) => {
    return res.send("Student inserted, refresh database to see results")
 })
 
-//Retrive all records
-// http://localhost:8080/getAll
-app.get("/getAll", async (req, res)=>{
-    // get all documents in the students collection
-    const studentList = await Student.find()
-    console.log("DEBUG:")
-    console.log(studentList)
- 
- 
-    // return the template
-    // Creates a variable called "s"
-    // The variable "s" can be used in all.ejs
-    // What is s?
-    // S = set to student List = array containing the results from the database
-    return res.render("all.ejs", {s:studentList})
- 
- 
- })
- 
-
-
 // Add records from the url
 
 //http://localhost:8080/insert/Sara1234/3.0/false
